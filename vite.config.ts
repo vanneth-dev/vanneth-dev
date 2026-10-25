@@ -5,8 +5,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // base: "./",
-  base: "/vanneth-dev/",
+  base: "./",
   resolve: {
     alias: { src: path.resolve(__dirname, "src") },
   },
