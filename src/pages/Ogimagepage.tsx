@@ -213,6 +213,17 @@ const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
             paddingLeft: 40,
           }}
         >
+          {/* <div
+            style={{
+              width: 660,
+              height: 4,
+              borderRadius: 2,
+              marginBottom: 28,
+              marginLeft: -40,
+              background: BAR_GRADIENT,
+            }}
+          /> */}
+
           <div
             style={{
               fontSize: 112,
