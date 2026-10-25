@@ -6,7 +6,7 @@ import { AnimatedBackground } from "src/features/home/components/ui/AnimatedBack
 const DEFAULTS = {
   nameEn: "Vanneth Tak",
   roleEn: "Full-Stack Developer",
-  tech: "Laravel · Node.js · React · TypeScript",
+  tech: "Laravel  ·  Node.js  ·  React  ·  TypeScript",
   location: "Phnom Penh, Cambodia",
   url: "vanneth-dev.github.io",
 };
@@ -26,6 +26,10 @@ const CARD = { width: 1200, height: 630 } as const;
 const PREVIEW_SCALE = 0.7;
 const SAVE_ENDPOINT = "/__save-og-image";
 
+/* ------------------------------------------------------------------ */
+/*  Site-matching tokens (from AnimatedBackground / Hero)              */
+/* ------------------------------------------------------------------ */
+
 // AnimatedBackground canvas background
 const BG = "radial-gradient(ellipse at center, #1a0033 0%, #000000 70%)";
 
@@ -40,6 +44,8 @@ const NAME_GRADIENT =
 // Scroll-progress bar: from-purple-500 via-pink-500 to-blue-500
 const BAR_GRADIENT =
   "linear-gradient(90deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%)";
+const BAR_GRADIENT_VERTICAL =
+  "linear-gradient(180deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%)";
 
 /* ------------------------------------------------------------------ */
 /*  Card                                                               */
@@ -155,8 +161,8 @@ const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
       <div
         style={{
           position: "absolute",
-          bottom: 120,
-          right: 260,
+          bottom: 90,
+          right: 150,
           width: 96,
           height: 96,
           border: "1px solid rgba(236,72,153,0.25)",
@@ -164,7 +170,7 @@ const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
         }}
       />
 
-      {/* Progress-bar accent */}
+      {/* Progress-bar accent: top header border */}
       <div
         style={{
           position: "absolute",
@@ -183,73 +189,82 @@ const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
           position: "relative",
           zIndex: 2,
           display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
+          flexDirection: "row",
+          alignItems: "stretch",
           maxWidth: "100%",
         }}
       >
+        {/* Start border: same gradient bar, vertical */}
         <div
           style={{
-            width: 64,
-            height: 4,
+            width: 4,
+            flexShrink: 0,
             borderRadius: 2,
-            marginBottom: 28,
-            background: BAR_GRADIENT,
+            background: BAR_GRADIENT_VERTICAL,
+            boxShadow: "0 0 16px rgba(168,85,247,0.5)",
           }}
         />
 
         <div
           style={{
-            fontSize: 120,
-            lineHeight: 1.2,
-            fontWeight: 700,
-            // fontStyle: "italic",
-            letterSpacing: -2,
-            whiteSpace: "nowrap",
-            backgroundImage: NAME_GRADIENT,
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            paddingLeft: 40,
           }}
         >
-          {nameEn}
-        </div>
+          <div
+            style={{
+              fontSize: 112,
+              lineHeight: 1.2,
+              fontWeight: 700,
+              letterSpacing: -2,
+              whiteSpace: "nowrap",
+              backgroundImage: NAME_GRADIENT,
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {nameEn}
+          </div>
 
-        <div
-          style={{
-            marginTop: 12,
-            fontSize: 46,
-            lineHeight: 1.3,
-            fontWeight: 300,
-            letterSpacing: 0.5,
-            color: "#ffffff",
-          }}
-        >
-          {roleEn}
-        </div>
+          <div
+            style={{
+              marginTop: 12,
+              fontSize: 46,
+              lineHeight: 1.3,
+              fontWeight: 300,
+              letterSpacing: 0.5,
+              color: "#ffffff",
+            }}
+          >
+            {roleEn}
+          </div>
 
-        <div
-          style={{
-            marginTop: 20,
-            fontSize: 26,
-            lineHeight: 1.6,
-            letterSpacing: 0.5,
-            color: "#d8b4fe",
-            whiteSpace: "pre",
-          }}
-        >
-          {tech}
-        </div>
+          <div
+            style={{
+              marginTop: 20,
+              fontSize: 26,
+              lineHeight: 1.6,
+              letterSpacing: 0.5,
+              color: "#d8b4fe",
+              whiteSpace: "pre",
+            }}
+          >
+            {tech}
+          </div>
 
-        <div style={{ display: "flex", gap: 20, marginTop: 44 }}>
-          <Pill>
-            <MapPin size={24} color="#c084fc" />
-            <span>{location}</span>
-          </Pill>
-          <Pill>
-            <Globe size={24} color="#60a5fa" />
-            <span>{url}</span>
-          </Pill>
+          <div style={{ display: "flex", gap: 20, marginTop: 44 }}>
+            <Pill>
+              <MapPin size={24} color="#c084fc" />
+              <span>{location}</span>
+            </Pill>
+            <Pill>
+              <Globe size={24} color="#60a5fa" />
+              <span>{url}</span>
+            </Pill>
+          </div>
         </div>
       </div>
     </div>
