@@ -93,7 +93,7 @@
   "aboutMe": {
     "title": "About Me",
     "position": "Full-Stack Developer",
-    "description": "A Full-Stack Developer specializing in backend systems (Laravel, Node.js), frontend development (React), and TypeScript, with expertise in MySQL, PostgreSQL, Cloud Computing, and version control using GitLab. Currently serving at the",
+    "description": "A Full-Stack Developer specializing in backend systems (Laravel, Node.js), frontend development (React), and TypeScript, with expertise in MySQL, MongoDB, Cloud Computing, and version control using GitLab. Currently serving at the",
     "work": "Ministry of Labour and Vocational Training."
   },
   "projects": {
