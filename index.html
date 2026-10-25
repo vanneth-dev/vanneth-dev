@@ -9,5 +9,15 @@
   <body data-theme="light">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- make for redirect after reload ( github pages ) -->
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get("redirect");
+
+      if (redirect && redirect.startsWith("/")) {
+        window.history.replaceState(null, "", redirect);
+      }
+    </script>
+    <!--  -->
   </body>
 </html>
