@@ -1,34 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Favicon & Canonical -->
     <link rel="icon" type="image/webp" href="/assets/icon/sticker.webp" />
     <link rel="canonical" href="https://vanneth-dev.github.io/" />
 
-    <title>Vanneth Tak (តាក់ វ៉ាន់ណេត) | Full-Stack Developer</title>
-
+    <!-- Primary Title & Meta Tags -->
+    <title>Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer</title>
+    <meta
+      name="title"
+      content="Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer"
+    />
     <meta
       name="description"
-      content="Hello, I'm Vanneth Tak. A Full-Stack Developer specializing in backend systems with Laravel and Node.js, frontend development with React, and TypeScript. Experienced in MySQL, MongoDB, cloud deployment, and version control using Git. Currently working at the Ministry of Labour and Vocational Training."
+      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) is a Full-Stack Developer in Phnom Penh, Cambodia, specializing in Laravel, Node.js, React, TypeScript, database systems, and cloud deployment. Currently working at the Ministry of Labour and Vocational Training."
+    />
+    <meta
+      name="keywords"
+      content="Vanneth Tak, Tak Vanneth, តាក់ វ៉ាន់ណេត, វ៉ាន់ណេត, វន្ណេត, Full-Stack Developer, Web Developer Cambodia, Software Engineer Phnom Penh, Laravel, Node.js, React, TypeScript"
     />
     <meta name="author" content="Vanneth Tak" />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="theme-color" content="#090d18" />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Vanneth Tak" />
+    <meta property="og:site_name" content="Vanneth Tak Portfolio" />
+    <meta property="og:url" content="https://vanneth-dev.github.io/" />
     <meta
       property="og:title"
-      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) | Full-Stack Developer"
+      content="Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer"
     />
     <meta
       property="og:description"
-      content="Full-Stack Developer specializing in Laravel, Node.js, React, TypeScript, database design, and cloud deployment. Building scalable web applications and digital systems."
+      content="Full-Stack Developer specializing in Laravel, Node.js, React, TypeScript, database design, and cloud deployment. Building scalable web applications."
     />
-    <meta property="og:url" content="https://vanneth-dev.github.io/" />
-
     <meta
       property="og:image"
       content="https://vanneth-dev.github.io/assets/imgs/og-image.png?v=1"
@@ -44,12 +56,12 @@
       property="og:image:alt"
       content="Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer"
     />
-
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="km_KH" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vanneth-dev.github.io/" />
     <meta
       name="twitter:title"
       content="Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer"
@@ -66,6 +78,33 @@
       name="twitter:image:alt"
       content="Vanneth Tak | តាក់ វ៉ាន់ណេត | Full-Stack Developer"
     />
+
+    <!-- Schema.org Structured Data (JSON-LD) for Search Engine Knowledge Graph -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vanneth Tak",
+        "alternateName": ["Tak Vanneth", "តាក់ វ៉ាន់ណេត", "វ៉ាន់ណេត", "វន្ណេត"],
+        "url": "https://vanneth-dev.github.io/",
+        "image": "https://vanneth-dev.github.io/assets/imgs/og-image.png?v=1",
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Ministry of Labour and Vocational Training"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Phnom Penh",
+          "addressCountry": "Cambodia"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/vanneth-tak",
+          "https://github.com/vanneth-dev",
+          "https://www.facebook.com/vannethtak"
+        ]
+      }
+    </script>
   </head>
 
   <body data-theme="light">
@@ -73,7 +112,7 @@
 
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- GitHub Pages SPA redirect -->
+    <!-- GitHub Pages SPA redirect script -->
     <script>
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get("redirect");
