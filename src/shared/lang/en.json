@@ -1,0 +1,111 @@
+{
+  "en": "English",
+  "km": "Khmer",
+  "system_name": "ប្រព័ន្ធគ្រប់គ្រងគេហទំព័រផ្ទាល់ខ្លួន",
+  "welcome": "Welcome back!",
+  "sign_in": "Sign in to your account",
+  "remember_me": "Remember me",
+  "forgot_password": "Forgot password?",
+  "email": "Email address",
+  "email_or_username": "Email or username",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "logout": "Logout",
+  "profile": "Profile",
+  "settings": "Settings",
+  "home": "Home",
+  "contact": "Contact",
+  "blog": "Blog",
+  "no_data": "No data available",
+  "back": "Back",
+  "create": "Create",
+  "update": "Update",
+  "no": "No",
+  "or": "or",
+  "unauthorized": "Unauthorized",
+  "no.": "No.",
+  "name": "Name",
+  "nameKm": "Name (Khmer)",
+  "description": "Description",
+  "created_at": "Created at",
+  "role": "Role",
+  "status": "Status",
+  "more": "More",
+  "username": "Username",
+  "Unauthorized": "Unauthorized",
+  "pagination": {
+    "page": "ទំព័រ",
+    "showing": "Showing",
+    "of": "of",
+    "to": "to"
+  },
+  "my_name": "Vanneth Tak",
+  "validation": {
+    "password_too_short": "Password must be at least 6 characters",
+    "unknown_error": "An unknown error occurred",
+    "email_required": "Email is required",
+    "email_not_found": "Email not found",
+    "password_required": "Password is required",
+    "email_incorrect": "This email is not registered",
+    "password_incorrect": "Incorrect password",
+    "token_verification_failed": "Token verification failed",
+    "passwords_required": "Passwords are required",
+    "passwords_not_match": "Passwords do not match",
+    "password_reset_success": "Password reset success",
+    "something_went_wrong": "Something went wrong",
+    "api_keys_missing": "Client API keys are missing",
+    "ip_not_allowed": "Client IP is not permitted to access this API."
+  },
+  "navigation": "Navigation",
+  "collapse_all": "Collapse All",
+  "expand_all": "Expand All",
+  "please_wait": "Please wait...",
+  "invalid_reset_link": "Invalid reset link",
+  "technicalSkills": "Technical Skills",
+  "auth": {
+    "verifying_token": "Verifying token...",
+    "new_password": "New password",
+    "enter_new_password": "Enter new password",
+    "password_requirements": "Password must be at least 6 characters and contain at least one uppercase letter and one lowercase letter",
+    "forgot_password": "Forgot password?",
+    "reset_password": "Reset password",
+    "enter_email_to_recover": "Enter your email to recover your account",
+    "check_email_for_instructions": "Check your email for instructions",
+    "recovery_email_sent": "Recovery email sent",
+    "send_recovery_email": "Send recovery email",
+    "request_new_link": "Request new link"
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Skills that I have worked on"
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Experience that I have worked on"
+  },
+  "education": {
+    "title": "Education",
+    "description": "Education that I have worked on"
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "position": "Full-Stack Developer",
+    "description": "A Full-Stack Developer specializing in backend systems (Laravel, Node.js), frontend development (React), and TypeScript, with expertise in MySQL, PostgreSQL, Cloud Computing, and version control using GitLab. Currently serving at the",
+    "work": "Ministry of Labour and Vocational Training."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Projects that I have worked on"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "description": "Certificates that I have worked on"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "work_place": " Ministry of Labor and Vocational Training."
+  }
+}

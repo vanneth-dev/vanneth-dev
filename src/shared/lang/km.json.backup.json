@@ -1,0 +1,110 @@
+{
+  "en": "អង់គ្លេស",
+  "km": "ភាសាខ្មែរ",
+  "system_name": "ប្រព័ន្ធគ្រប់គ្រងគេហទំព័រផ្ទាល់ខ្លួន",
+  "welcome": "សូមស្វាគមន៍!",
+  "sign_in": "ចូលទៅកាន់គណនីរបស់អ្នក",
+  "forgot_password": "ភ្លេចពាក្យសម្ងាត់",
+  "remember_me": "ចងចាំខ្ញុំ",
+  "email": "អាសយដ្ឋានអ៊ីមែល",
+  "email_or_username": "អ៊ីមែល ឬ ឈ្មោះអ្នកប្រើប្រាស់",
+  "password": "ពាក្យសម្ងាត់",
+  "confirm_password": "បញ្ជាក់ពាក្យសម្ងាត់",
+  "loading": "កំពុងដំណើរការ...",
+  "error": "កំហុស",
+  "success": "សម្រួល",
+  "logout": "ចេញ",
+  "settings": "ការកំណត់",
+  "home": "ទំព័រដើម",
+  "contact": "ទំនាក់ទំនង",
+  "blog": "ប័ណ្ណ",
+  "in": "នៅ",
+  "all": "ទាំងអស់",
+  "no_data": "រកមិនឃើញទិន្នន័យ",
+  "back": "ត្រឡប់",
+  "create": "បង្កើត",
+  "update": "កែប្រែ",
+  "no": "ទេ",
+  "or": "ឬ",
+  "unauthorized": "មិនមានសិទ្ធិ",
+  "no.": "លេខរៀង",
+  "name": "ឈ្មោះ",
+  "nameKm": "ឈ្មោះ (ខ្មែរ)",
+  "description": "ការពិពណ៌នា",
+  "created_at": "កាលបរិច្ឆេទបង្កើត",
+  "role": "តួនាទី",
+  "status": "ស្ថានភាព",
+  "more": "ច្រើនទៀត",
+  "username": "ឈ្មោះអ្នកប្រើប្រាស់",
+  "Unauthorized": "មិនមានសិទ្ធិ",
+  "pagination": {
+    "page": "ទំព័រ",
+    "showing": "បង្ហាញ",
+    "of": "នៃ",
+    "to": "ដល់"
+  },
+  "my_name": "តាក់ វ៉ាន់ណេត",
+  "validation": {
+    "password_too_short": "ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់ ៦ តួអក្សរ",
+    "unknown_error": "កំហុសមិនស្គាល់",
+    "email_required": "អ៊ីមែលទាមទារឱ្យមាន",
+    "email_not_found": "អ៊ីមែលរបស់អ្នកមិនមានក្នុងប្រព័ន្ធទេ",
+    "password_required": "ពាក្យសម្ងាត់ទាមទារឱ្យមាន",
+    "email_incorrect": "អ៊ីមែលមិនត្រឹមត្រូវ",
+    "password_incorrect": "ពាក្យសម្ងាត់មិនត្រឹមត្រូវ",
+    "token_verification_failed": "ការផ្ទៀងផ្ទាត់មិនជោគជ័យ",
+    "password_reset_success": "ការកំណត់ពាក្យសម្ងាត់ជោគជ័យ",
+    "something_went_wrong": "មានអ្វីមួយមិនត្រឹមត្រូវ"
+  },
+  "navigation": "Navigation",
+  "collapse_all": "Collapse All",
+  "expand_all": "Expand All",
+  "please_wait": "Please wait...",
+  "invalid_reset_link": "តំណភ្ជាប់មិនត្រឹមត្រូវ",
+  "technicalSkills": "ជំនាញបច្ចេកទេស",
+  "auth": {
+    "verifying_token": "ការផ្ទៀងផ្ទាត់ភាពត្រឹមត្រូវនៃតំណភ្ជាប់របស់អ្នក...",
+    "new_password": "New password",
+    "enter_new_password": "បញ្ចូលពាក្យសម្ងាត់ថ្មី",
+    "password_requirements": "ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់ ៦ តួអក្សរ និងត្រូវមានលេខ ឬ តួអក្សរធំ",
+    "forgot_password": "ភ្លេចពាក្យសម្ងាត់?",
+    "reset_password": "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
+    "enter_email_to_recover": "បញ្ចូលអ៊ីមែលរបស់អ្នកដើម្បីស្ដាបានគណនីវិញ",
+    "back_to_login": "ត្រឡប់ទៅកាន់ការចូលគណនី",
+    "check_email_for_instructions": "សូមពិនិត្យអ៊ីមែលរបស់អ្នកសម្រាប់តំណភ្ជាប់និងសេចក្ដីណែនាំសម្រាប់ការកំណត់ពាក្យសម្ងាត់ឡើងវិញ",
+    "recovery_email_sent": "តំណភ្ជាប់ត្រូវបានផ្ញើរទៅកាន់អ៊ីមែលរបស់អ្នក",
+    "send_recovery_email": "ផ្ញើអ៊ីមែលស្ដារគណនីឡើងវិញ",
+    "request_new_link": "Request new link"
+  },
+  "skills": {
+    "title": "ជំនាញ",
+    "description": "ជំនាញដែលខ្ញុំបានធ្វើ"
+  },
+  "experience": {
+    "title": "បទពិសោធន៍ការងារ",
+    "description": "បទពិសោធន៍ការងារដែលខ្ញុំបានធ្វើ"
+  },
+  "education": {
+    "title": "ការអប់រំ",
+    "description": "ការអប់រំដែលខ្ញុំបានធ្វើ"
+  },
+  "aboutMe": {
+    "title": "អំពីខ្ញុំ",
+    "name": "តាក់ វ៉ាន់ណេត",
+    "location": "ភ្នំពេញ, កម្ពុជា",
+    "position": "Full-Stack Developer",
+    "description": "ជា Full-Stack Developer ដែលមានជំនាញលើការអភិវឌ្ឍប្រព័ន្ធ Backend (Laravel, Node.js) ព្រមទាំង Frontend (React), TypeScript, MySQL, PostgreSQL, Cloud Computing និងការគ្រប់គ្រងកូដដោយប្រើប្រាស់ GitLab។ បច្ចុប្បន្នកំពុងបម្រើការងារនៅ"
+  },
+  "projects": {
+    "title": "គម្រោង",
+    "description": "គម្រោងដែលខ្ញុំបានធ្វើ"
+  },
+  "certificates": {
+    "title": "វិញ្ញាបនបត្រ",
+    "description": "វិញ្ញាបនបត្រដែលខ្ញុំបានទទួល"
+  },
+  "hero": {
+    "greeting": "សួរស្តី, ខ្ញុំ",
+    "work_place": " ក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ។"
+  }
+}

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+/* @tailwind base;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@tailwind components;
+@tailwind utilities; */
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}

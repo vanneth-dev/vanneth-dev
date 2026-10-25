@@ -1,0 +1,280 @@
+@import "aos/dist/aos.css";
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff, #d1d5db, #9ca3af);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4b5563, #6b7280, #9ca3af);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6b7280, #9ca3af, #d1d5db);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes cosmic-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 255, 255, 0.1),
+      0 0 40px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(255, 255, 255, 0.2),
+      0 0 80px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes galaxy-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nebula-drift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  33% {
+    transform: translateX(10px) translateY(-5px) scale(1.1);
+  }
+  66% {
+    transform: translateX(-5px) translateY(10px) scale(0.9);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes starfield-twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 3s ease-in-out infinite;
+}
+
+.animate-galaxy-rotate {
+  animation: galaxy-rotate 20s linear infinite;
+}
+
+.animate-nebula-drift {
+  animation: nebula-drift 8s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: starfield-twinkle 3s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff, #d1d5db, #9ca3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.2),
+    0 0 60px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.cosmic-bg {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(128, 128, 128, 0.01) 25%,
+    rgba(64, 64, 64, 0.01) 50%,
+    transparent 70%
+  );
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+.particle {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.space-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stellar-glow {
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.void-bg {
+  background: linear-gradient(45deg, #000000, #0a0a0a, #1a1a1a);
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  animation: shooting-star 3s linear infinite;
+}
+
+.space-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.constellation-pattern::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 40px 70px, white, transparent),
+    radial-gradient(1px 1px at 90px 40px, white, transparent),
+    radial-gradient(1px 1px at 130px 80px, white, transparent),
+    radial-gradient(2px 2px at 160px 30px, white, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  opacity: 0.1;
+  pointer-events: none;
+}
