@@ -1,16 +1,17 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Unauthorized from "src/shared/components/error/403";
-import PrivateRoute from "src/shared/components/protection/PrivateRoute";
-import NotFound from "src/shared/components/error/404";
+import { Route, Routes } from "react-router-dom";
+import AdminLayout from "src/layouts/AdminLayout";
 import Blocked from "src/pages/Blocked";
 import CheckApi from "src/pages/CheckApi";
-import AdminLayout from "src/layouts/AdminLayout";
+import Unauthorized from "src/shared/components/error/403";
+import NotFound from "src/shared/components/error/404";
+import PrivateRoute from "src/shared/components/protection/PrivateRoute";
 
-import { homeRoutes } from "src/features/home/routes";
 import { authRoutes } from "src/features/auth/routes";
 import { dashboardRoutes } from "src/features/dashboard/routes";
+import { homeRoutes } from "src/features/home/routes";
 import { settingsRoutes } from "src/features/settings/routes";
+import Ogimagepage from "src/pages/Ogimagepage";
 
 class AppPathRegistry {
   readonly GLOBAL = {
@@ -22,12 +23,15 @@ class AppPathRegistry {
   get HOME() {
     return homeRoutes.paths;
   }
+
   get AUTH() {
     return authRoutes.paths;
   }
+
   get DASHBOARD() {
     return dashboardRoutes.paths;
   }
+
   get SETTINGS() {
     return settingsRoutes.paths;
   }
@@ -41,8 +45,12 @@ const ProtectedLayout = () => (
   </PrivateRoute>
 );
 
+const isDevelopment = import.meta.env.DEV;
+
 const AppRoutes: React.FC = () => (
   <Routes>
+    {isDevelopment && <Route path="/og" element={<Ogimagepage />} />}
+
     <Route path={Router.GLOBAL.CHECK_API} element={<CheckApi />} />
     <Route path={Router.GLOBAL.BLOCKED} element={<Blocked />} />
     <Route path={Router.GLOBAL.UNAUTHORIZED} element={<Unauthorized />} />

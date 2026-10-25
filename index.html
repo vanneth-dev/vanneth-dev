@@ -2,14 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/icon/sticker.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanneth Tak | Full-Stack Developer</title>
+
+    <link rel="icon" type="image/webp" href="/assets/icon/sticker.webp" />
+    <link rel="canonical" href="https://vanneth-dev.github.io/" />
+
+    <title>Vanneth Tak (តាក់ វ៉ាន់ណេត) | Full-Stack Developer</title>
+
+    <meta
+      name="description"
+      content="Hello, I'm Vanneth Tak. A Full-Stack Developer specializing in backend systems with Laravel and Node.js, frontend development with React, and TypeScript. Experienced in MySQL, MongoDB, cloud deployment, and version control using Git. Currently working at the Ministry of Labour and Vocational Training."
+    />
+    <meta name="author" content="Vanneth Tak" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#090d18" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vanneth Tak" />
+    <meta
+      property="og:title"
+      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) | Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer specializing in Laravel, Node.js, React, TypeScript, database design, and cloud deployment. Building scalable web applications and digital systems."
+    />
+    <meta property="og:url" content="https://vanneth-dev.github.io/" />
+
+    <meta
+      property="og:image"
+      content="https://vanneth-dev.github.io/assets/imgs/og-image.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://vanneth-dev.github.io/assets/imgs/og-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) — Full-Stack Developer"
+    />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="km_KH" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) | Full-Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-Stack Developer specializing in Laravel, Node.js, React, TypeScript, database design, and cloud deployment."
+    />
+    <meta
+      name="twitter:image"
+      content="https://vanneth-dev.github.io/assets/imgs/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Vanneth Tak (តាក់ វ៉ាន់ណេត) — Full-Stack Developer"
+    />
   </head>
+
   <body data-theme="light">
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
-    <!-- make for redirect after reload ( github pages ) -->
+
+    <!-- GitHub Pages SPA redirect -->
     <script>
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get("redirect");
@@ -18,6 +82,5 @@
         window.history.replaceState(null, "", redirect);
       }
     </script>
-    <!--  -->
   </body>
 </html>
