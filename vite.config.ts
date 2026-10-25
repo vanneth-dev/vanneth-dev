@@ -17,5 +17,6 @@ export default defineConfig({
     fs: {
       strict: true,
     },
+    host: true,
   },
 });
