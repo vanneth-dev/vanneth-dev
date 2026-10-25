@@ -37,6 +37,18 @@ jobs:
 
       - name: Build React application
         run: npm run build
+        env:
+          VITE_NODE_ENV: ${{ vars.VITE_NODE_ENV }}
+          VITE_NODE_PUBLIC_URL: ${{ vars.VITE_NODE_PUBLIC_URL }}
+          VITE_NODE_BUILD_VERSION: ${{ vars.VITE_NODE_BUILD_VERSION }}
+          VITE_DEFAULT_LANGUAGE: ${{ vars.VITE_DEFAULT_LANGUAGE }}
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+
+          VITE_HOTJAR_ID: ${{ secrets.VITE_HOTJAR_ID }}
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
+          VITE_API_CLIENT_KEY: ${{ secrets.VITE_API_CLIENT_KEY }}
+          VITE_API_CLIENT_SECRET: ${{ secrets.VITE_API_CLIENT_SECRET }}
+          VITE_API_SECRET_KEY: ${{ secrets.VITE_API_SECRET_KEY }}
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
