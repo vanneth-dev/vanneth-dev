@@ -1,11 +1,11 @@
+import { Cpu, Layers, Star } from "lucide-react";
 import { useState } from "react";
-import { Star, Cpu, Layers } from "lucide-react";
 import {
-  EXPERIENCE_YEARS,
   ABOUT_TABS,
-  TECH_STACK,
+  EXPERIENCE_YEARS,
   MINDSET_VALUES,
   SECTION_STRINGS,
+  TECH_STACK,
 } from "../../constants";
 import { TechItem } from "../../types";
 
@@ -22,15 +22,15 @@ export function AboutMeSection() {
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <div className="relative inline-block mb-8">
-            <h2 className="relative text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">
+          <div className="relative inline-block mb-0">
+            <h2 className="relative text-5xl font-extrabold leading-[1.4] py-2 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">
               {SECTION_STRINGS.title}
             </h2>
           </div>
           <div className="w-40 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full mt-4"></div>
-          <p className="text-gray-300 mt-6 text-xl max-w-3xl mx-auto">
+          {/* <p className="text-gray-300 mt-6 text-xl max-w-3xl mx-auto">
             {SECTION_STRINGS.subtitle}
-          </p>
+          </p> */}
         </div>
 
         <div className="flex justify-center mb-16">

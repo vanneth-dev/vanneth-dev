@@ -93,7 +93,7 @@
     "name": "តាក់ វ៉ាន់ណេត",
     "location": "ភ្នំពេញ, កម្ពុជា",
     "position": "Full-Stack Developer ( អ្នកអភិវឌ្ឍន៍កម្មវិធី )",
-    "description": "ជា Full-Stack Developer ដែលមានជំនាញលើការអភិវឌ្ឍប្រព័ន្ធ Backend (Laravel, Node.js) ព្រមទាំង Frontend (React), TypeScript, MySQL, PostgreSQL, Cloud Computing និងការគ្រប់គ្រងកូដដោយប្រើប្រាស់ GitLab។ បច្ចុប្បន្នកំពុងបម្រើការងារនៅ"
+    "description": "ជា Full-Stack Developer ដែលមានជំនាញលើការអភិវឌ្ឍប្រព័ន្ធ Backend (Laravel, Node.js) ព្រមទាំង Frontend (React), TypeScript, MySQL, MongoDB, Cloud Computing និងការគ្រប់គ្រងកូដដោយប្រើប្រាស់ GitLab។ បច្ចុប្បន្នកំពុងបម្រើការងារនៅ"
   },
   "projects": {
     "title": "គម្រោង",
@@ -106,5 +106,8 @@
   "hero": {
     "greeting": "សួរស្តី, ខ្ញុំ",
     "work_place": " ក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ។"
+  },
+  "journey": {
+    "title": "ដំណើរជីវិតរបស់ខ្ញុំ"
   }
 }

@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { t } from "i18next";
 import {
   Calendar,
-  MapPin,
-  Code,
   CheckCircle,
-  Star,
+  Code,
+  Globe,
+  MapPin,
   Sparkles,
+  Star,
   TrendingUp,
   Users,
-  Globe,
 } from "lucide-react";
+import { useState } from "react";
 import { JOURNEY_ITEMS } from "../../constants";
 
 export function JourneySection() {
@@ -26,8 +27,8 @@ export function JourneySection() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center space-x-2 mb-2">
               <Sparkles className="w-5 h-5 text-purple-400" />
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                My Journey
+              <h2 className="text-2xl md:text-3xl leading-[1.8] font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                {t("journey.title")}
               </h2>
               <Sparkles className="w-5 h-5 text-pink-400" />
             </div>
