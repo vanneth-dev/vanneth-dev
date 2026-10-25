@@ -1,10 +1,13 @@
 import { toPng } from "html-to-image";
+import { Globe, MapPin } from "lucide-react";
 import { forwardRef, useRef, useState } from "react";
+import { AnimatedBackground } from "src/features/home/components/ui/AnimatedBackground";
 
 const DEFAULTS = {
   nameEn: "Vanneth Tak",
   roleEn: "Full-Stack Developer",
-  tech: "Laravel  ·  Node.js  ·  React  ·  TypeScript",
+  tech: "Laravel · Node.js · React · TypeScript",
+  location: "Phnom Penh, Cambodia",
   url: "vanneth-dev.github.io",
 };
 
@@ -15,6 +18,7 @@ const FORM: { key: FieldKey; label: string }[] = [
   { key: "nameEn", label: "Name" },
   { key: "roleEn", label: "Role" },
   { key: "tech", label: "Technologies" },
+  { key: "location", label: "Location" },
   { key: "url", label: "Website" },
 ];
 
@@ -22,12 +26,78 @@ const CARD = { width: 1200, height: 630 } as const;
 const PREVIEW_SCALE = 0.7;
 const SAVE_ENDPOINT = "/__save-og-image";
 
-// Same background as the site home page
-const BG =
-  "radial-gradient(ellipse at center, #1a0033 0%, #050208 70%, #000000 100%)";
+// AnimatedBackground canvas background
+const BG = "radial-gradient(ellipse at center, #1a0033 0%, #000000 70%)";
+
+// Hero overlay: from-black/70 via-purple-900/30 to-black/70
+const HERO_OVERLAY =
+  "linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(88,28,135,0.3), rgba(0,0,0,0.7))";
+
+// Hero h1: from-purple-400 via-pink-500 to-blue-400
+const NAME_GRADIENT =
+  "linear-gradient(90deg, #c084fc 0%, #ec4899 50%, #60a5fa 100%)";
+
+// Scroll-progress bar: from-purple-500 via-pink-500 to-blue-500
+const BAR_GRADIENT =
+  "linear-gradient(90deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%)";
+
+/* ------------------------------------------------------------------ */
+/*  Card                                                               */
+/* ------------------------------------------------------------------ */
+
+const Orb = ({
+  size,
+  color,
+  top,
+  left,
+  right,
+  bottom,
+}: {
+  size: number;
+  color: string;
+  top?: number;
+  left?: number;
+  right?: number;
+  bottom?: number;
+}) => (
+  <div
+    style={{
+      position: "absolute",
+      width: size,
+      height: size,
+      top,
+      left,
+      right,
+      bottom,
+      borderRadius: "50%",
+      background: color,
+      filter: "blur(64px)",
+    }}
+  />
+);
+
+const Pill = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      padding: "14px 28px",
+      borderRadius: 16,
+      background: "rgba(0,0,0,0.3)",
+      border: "1px solid rgba(168,85,247,0.4)",
+      boxShadow: "0 0 32px rgba(168,85,247,0.15)",
+      color: "#ffffff",
+      fontSize: 22,
+      fontWeight: 600,
+    }}
+  >
+    {children}
+  </div>
+);
 
 const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
-  { nameEn, roleEn, tech, url },
+  { nameEn, roleEn, tech, location, url },
   ref,
 ) {
   return (
@@ -37,88 +107,158 @@ const OgCard = forwardRef<HTMLDivElement, Fields>(function OgCard(
         position: "relative",
         display: "flex",
         flexDirection: "column",
+        alignItems: "flex-start",
         justifyContent: "center",
         boxSizing: "border-box",
         width: CARD.width,
         height: CARD.height,
-        padding: "64px 96px 120px",
+        padding: "64px 96px",
         overflow: "hidden",
+        textAlign: "left",
         color: "#ffffff",
-        fontFamily: '"Inter", "Kantumruy Pro", sans-serif',
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Kantumruy Pro", sans-serif',
         background: BG,
       }}
     >
-      {/* Accent bar */}
-      <div
-        style={{
-          width: 56,
-          height: 4,
-          borderRadius: 2,
-          background: "#a855f7",
-          marginBottom: 32,
-        }}
+      {/* Your real site background (stars + lines), sized to the card */}
+      <AnimatedBackground
+        width={CARD.width}
+        height={CARD.height}
+        contained
+        animate={false}
+        starCount={120}
       />
 
-      {/* Name */}
+      {/* Hero overlay */}
       <div
-        style={{
-          maxWidth: "100%",
-          fontSize: 108,
-          lineHeight: 1.1,
-          fontWeight: 800,
-          letterSpacing: -3,
-          whiteSpace: "nowrap",
-          color: "#ffffff",
-        }}
-      >
-        {nameEn}
-      </div>
+        style={{ position: "absolute", inset: 0, background: HERO_OVERLAY }}
+      />
 
-      {/* Role */}
-      <div
-        style={{
-          marginTop: 16,
-          fontSize: 40,
-          lineHeight: 1.3,
-          fontWeight: 500,
-          color: "#c4b5fd",
-        }}
-      >
-        {roleEn}
-      </div>
+      {/* Hero orbs: purple / pink / blue */}
+      <Orb size={420} color="rgba(168,85,247,0.22)" top={-120} left={-100} />
+      <Orb size={360} color="rgba(236,72,153,0.2)" bottom={-120} right={-60} />
+      <Orb size={280} color="rgba(59,130,246,0.2)" top={170} left={800} />
 
-      {/* Tech */}
-      <div
-        style={{
-          marginTop: 32,
-          fontSize: 22,
-          fontWeight: 500,
-          color: "#94a3b8",
-          whiteSpace: "pre",
-        }}
-      >
-        {tech}
-      </div>
-
-      {/* Footer: url */}
+      {/* Floating decor from the home page, kept on the empty right side */}
       <div
         style={{
           position: "absolute",
-          left: 96,
-          right: 96,
-          bottom: 52,
-          paddingTop: 22,
-          borderTop: "1px solid rgba(255,255,255,0.12)",
-          fontSize: 21,
-          fontWeight: 500,
-          color: "#a5b4fc",
+          top: 110,
+          right: 120,
+          width: 128,
+          height: 128,
+          borderRadius: "50%",
+          border: "1px solid rgba(168,85,247,0.25)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: 120,
+          right: 260,
+          width: 96,
+          height: 96,
+          border: "1px solid rgba(236,72,153,0.25)",
+          transform: "rotate(45deg)",
+        }}
+      />
+
+      {/* Progress-bar accent */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: 4,
+          background: BAR_GRADIENT,
+          boxShadow: "0 0 16px rgba(168,85,247,0.5)",
+        }}
+      />
+
+      {/* Content */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          maxWidth: "100%",
         }}
       >
-        {url}
+        <div
+          style={{
+            width: 64,
+            height: 4,
+            borderRadius: 2,
+            marginBottom: 28,
+            background: BAR_GRADIENT,
+          }}
+        />
+
+        <div
+          style={{
+            fontSize: 120,
+            lineHeight: 1.2,
+            fontWeight: 700,
+            // fontStyle: "italic",
+            letterSpacing: -2,
+            whiteSpace: "nowrap",
+            backgroundImage: NAME_GRADIENT,
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {nameEn}
+        </div>
+
+        <div
+          style={{
+            marginTop: 12,
+            fontSize: 46,
+            lineHeight: 1.3,
+            fontWeight: 300,
+            letterSpacing: 0.5,
+            color: "#ffffff",
+          }}
+        >
+          {roleEn}
+        </div>
+
+        <div
+          style={{
+            marginTop: 20,
+            fontSize: 26,
+            lineHeight: 1.6,
+            letterSpacing: 0.5,
+            color: "#d8b4fe",
+            whiteSpace: "pre",
+          }}
+        >
+          {tech}
+        </div>
+
+        <div style={{ display: "flex", gap: 20, marginTop: 44 }}>
+          <Pill>
+            <MapPin size={24} color="#c084fc" />
+            <span>{location}</span>
+          </Pill>
+          <Pill>
+            <Globe size={24} color="#60a5fa" />
+            <span>{url}</span>
+          </Pill>
+        </div>
       </div>
     </div>
   );
 });
+
+/* ------------------------------------------------------------------ */
+/*  Page (unchanged logic + UI)                                        */
+/* ------------------------------------------------------------------ */
 
 export default function OgImagePage() {
   const cardRef = useRef<HTMLDivElement>(null);

@@ -8,7 +8,21 @@ interface Star {
   speed: number;
 }
 
-export function AnimatedBackground() {
+interface AnimatedBackgroundProps {
+  width?: number;
+  height?: number;
+  contained?: boolean;
+  animate?: boolean;
+  starCount?: number;
+}
+
+export function AnimatedBackground({
+  width,
+  height,
+  contained = false,
+  animate: shouldAnimate = true,
+  starCount = 300,
+}: AnimatedBackgroundProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starsRef = useRef<Star[]>([]);
   const animationRef = useRef<number | null>(null);
@@ -21,13 +35,13 @@ export function AnimatedBackground() {
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = width ?? window.innerWidth;
+      canvas.height = height ?? window.innerHeight;
     };
 
     const createStars = () => {
       const stars: Star[] = [];
-      const numStars = 300;
+      const numStars = starCount;
 
       for (let i = 0; i < numStars; i++) {
         stars.push({
@@ -82,30 +96,36 @@ export function AnimatedBackground() {
         });
       });
 
-      animationRef.current = requestAnimationFrame(animate);
+      if (shouldAnimate) {
+        animationRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    const handleResize = () => {
+      resizeCanvas();
+      createStars();
     };
 
     resizeCanvas();
     createStars();
     animate();
 
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      createStars();
-    });
+    if (width === undefined || height === undefined) {
+      window.addEventListener("resize", handleResize);
+    }
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [width, height, shouldAnimate, starCount]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 pointer-events-none"
+      className={`${contained ? "absolute" : "fixed"} inset-0 z-0 pointer-events-none`}
       style={{
         background:
           "radial-gradient(ellipse at center, #1a0033 0%, #000000 70%)",
