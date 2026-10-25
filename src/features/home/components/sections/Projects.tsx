@@ -47,22 +47,30 @@ export function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-
                 <div className="flex space-x-4">
-                  <a
-                    href={project.demoLink}
-                    className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span className="text-sm">Live Demo</span>
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-gray-300 transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span className="text-sm">Code</span>
-                  </a>
+                  {project.demoLink !== "#" && (
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm">Live Demo</span>
+                    </a>
+                  )}
+
+                  {project.githubLink !== "#" && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-400 hover:text-gray-300 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span className="text-sm">Code</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

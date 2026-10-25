@@ -412,35 +412,92 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
 ];
 
+const PROJECT_IMAGE_PATH = "/assets/imgs/projects/";
+
 export const PROJECTS: Project[] = [
   {
-    title: "ប្រព័ន្ធស្វែងរកការងារ - Panel Jobs",
+    title: "TVET Main",
     description:
-      "Full-stack job search platform built with Laravel and a Telegram bot.",
-    technologies: ["Laravel", "PHP", "MySQL", "Telegram Bot"],
-    image: "/assets/imgs/projects/panel-jobs.jpeg",
+      "គេហទំព័រចម្បងសម្រាប់បង្ហាញ និងផ្តល់តំណភ្ជាប់ទៅកាន់ប្រព័ន្ធ TVET 1.5M និង TVET Program (MIS)។",
+    technologies: ["Angular"],
+    image: PROJECT_IMAGE_PATH + "tvet-main.png",
+    demoLink: "https://tvet.gov.kh/",
+    githubLink: "#",
+  },
+  {
+    title: "TVET 15M",
+    description:
+      "ប្រព័ន្ធគ្រប់គ្រងកម្មវិធីបណ្តុះបណ្តាលជំនាញបច្ចេកទេស និងវិជ្ជាជីវៈដល់យុវជនមកពីគ្រួសារក្រីក្រ និងគ្រួសារងាយរងហានិភ័យចំនួន ១,៥លាននាក់ រួមមានគេហទំព័រសម្រាប់អ្នកប្រើប្រាស់ ប្រព័ន្ធគ្រប់គ្រងរដ្ឋបាល និង Backend API។",
+    technologies: ["Node.js (Express)", "Angular", "MongoDB"],
+    image: PROJECT_IMAGE_PATH + "tvet-15m.png",
+    demoLink: "https://scholarship.tvet.gov.kh/",
+    githubLink: "#",
+  },
+  {
+    title: "TVET Program",
+    description:
+      "ប្រព័ន្ធព័ត៌មានគ្រប់គ្រងការអប់រំបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈ (TVET MIS) សម្រាប់បង្ហាញ និងគ្រប់គ្រងព័ត៌មានសាលារៀន កម្មវិធីបណ្តុះបណ្តាល និងទិន្នន័យពាក់ព័ន្ធ តាមរយៈប្រព័ន្ធ School, DGT-VET, Admin និង Backend API។",
+    technologies: ["Node.js (Express)", "Angular", "MongoDB"],
+    image: PROJECT_IMAGE_PATH + "tvet-program.png",
+    demoLink: "https://school.tvet.gov.kh/",
+    githubLink: "#",
+  },
+  {
+    title: "TVET RPL",
+    description:
+      "ប្រព័ន្ធវាយតម្លៃផ្អែកលើសមត្ថភាព និងការផ្តល់គុណវុឌ្ឍិសម្រាប់កម្ពុជា",
+    technologies: ["Node.js (Express)", "Angular", "MongoDB"],
+    image: PROJECT_IMAGE_PATH + "tvet-rpl.png",
     demoLink: "#",
     githubLink: "#",
   },
   {
-    title: "Events Management System - events.mlvt.gov.kh",
-    description:
-      "Collaborative event management system with real-time updates and team collaboration features.",
-    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
-    image: "/assets/imgs/projects/events.mlvt.gov.kh.jpeg",
+    title: "Job Seeker & Job Provider",
+    description: "ប្រព័ន្ធស្វែងរកការងារ និងប្រព័ន្ធជ្រើសរើសកម្លាំងពលកម្ម",
+    technologies: ["Laravel (PHP)", "MySQL"],
+    image: PROJECT_IMAGE_PATH + "onsite.png",
     demoLink: "#",
     githubLink: "#",
   },
   {
-    title: "ប្រព័ន្ធតាមដាន ត្រួតពិនិត្យ និងវាយតម្លៃ (M&E)",
-    description:
-      "Monitoring and evaluation system for tracking and assessing projects.",
-    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
-    image: "/assets/imgs/projects/me.mlvt.gov.kh.jpeg",
+    title: "Freelance Project",
+    description: "KRT388FUN Admin Dashboard",
+    technologies: ["React (TypeScript)", "FastAPI (Python)", "MySQL"],
+    image: PROJECT_IMAGE_PATH + "KRT388FUNAdminDashboard.png",
     demoLink: "#",
     githubLink: "#",
   },
 ];
+
+// export const CERTIFICATES: Certificate[] = [
+//   {
+//     title: "Programming with JavaScript",
+//     issuer: "Coursera",
+//     date: "",
+//     credentialId: "WTZZ66KB46D5",
+//     verifyLink:
+//       "https://www.coursera.org/account/accomplishments/verify/WTZZ66KB46D5",
+//     image: "/assets/img/certificate/Coursera_JavaScript.png",
+//   },
+//   {
+//     title: "Front-End Development",
+//     issuer: "Coursera",
+//     date: "",
+//     credentialId: "V24NFUPLKBJW",
+//     verifyLink:
+//       "https://www.coursera.org/account/accomplishments/verify/V24NFUPLKBJW",
+//     image: "/assets/img/certificate/Coursera_Front-End.png",
+//   },
+//   {
+//     title: "Version Control",
+//     issuer: "Coursera",
+//     date: "",
+//     credentialId: "GR6CYPFDAUNY",
+//     verifyLink:
+//       "https://www.coursera.org/account/accomplishments/verify/GR6CYPFDAUNY",
+//     image: "/assets/img/certificate/Coursera_version_control.png",
+//   },
+// ];
 
 export const CERTIFICATES: Certificate[] = [
   {
