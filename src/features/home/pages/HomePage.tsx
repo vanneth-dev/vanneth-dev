@@ -1,25 +1,26 @@
-import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import HomeLayout from "src/layouts/HomeLayout";
+import { useEffect, useState } from "react";
 import { AnimatedBackground } from "src/features/home/components/ui/AnimatedBackground";
 import { EnhancedNavHeader } from "src/features/home/components/ui/EnhancedNavHeader";
-import { SideNavigation } from "src/features/home/components/ui/SideNavigation";
 import { MobileMenu } from "src/features/home/components/ui/MobileMenu";
+import { SideNavigation } from "src/features/home/components/ui/SideNavigation";
+import HomeLayout from "src/layouts/HomeLayout";
 
-import { HeroSection } from "../components/sections/Hero.tsx";
+import { useTranslation } from "react-i18next";
 import { AboutMeSection } from "src/features/home/components/sections/AboutMe";
-import { JourneySection } from "src/features/home/components/sections/Journey";
-import { TechnicalSkillsSection } from "src/features/home/components/sections/TechnicalSkills";
-import { ProjectsSection } from "src/features/home/components/sections/Projects";
 import { CertificatesSection } from "src/features/home/components/sections/Certificates";
+import { JourneySection } from "src/features/home/components/sections/Journey";
+import { ProjectsSection } from "src/features/home/components/sections/Projects";
+import { TechnicalSkillsSection } from "src/features/home/components/sections/TechnicalSkills";
+import { HeroSection } from "../components/sections/Hero.tsx";
+import { NAVIGATION_SECTIONS } from "../constants";
 import {
-  useMousePosition,
   useActiveSection,
   useAOSInit,
-  useScrollProgress,
   useMobileMenu,
+  useMousePosition,
+  useScrollProgress,
 } from "../hooks";
-import { NAVIGATION_SECTIONS } from "../constants";
 import "../index.css";
 
 export function HomePage() {
@@ -30,6 +31,7 @@ export function HomePage() {
   const [isMobileMenuOpen, toggleMobileMenu] = useMobileMenu();
 
   useAOSInit();
+  useTranslation();
 
   useEffect(() => {
     scrollToSection("hero");

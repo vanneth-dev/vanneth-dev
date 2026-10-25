@@ -107,5 +107,8 @@
   "hero": {
     "greeting": "Hello, I'm",
     "work_place": " Ministry of Labor and Vocational Training."
+  },
+  "journey": {
+    "title": "My Journey"
   }
 }
