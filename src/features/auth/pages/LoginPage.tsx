@@ -225,7 +225,7 @@ export default function Login() {
           </div>
           <div className="w-full">
             <Turnstile
-              sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY || ""}
+              sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY || "0x4AAAAAAFmTddbJED0BCj7D"}
               onVerify={setTurnstileToken}
               theme="light"
               size="flexible"
