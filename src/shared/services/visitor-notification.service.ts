@@ -41,31 +41,19 @@ export const visitorNotificationService = {
       const device = visitorService.getDeviceInfo();
 
       const message = [
-        "🔔 NEW PORTFOLIO VISITOR",
-        "━━━━━━━━━━━━━━━━━━",
+        "🔔 Portfolio Visitor",
         "",
-        "🌐 VISIT",
-        `URL: ${window.location.href}`,
-        `Referrer: ${document.referrer || "Direct"}`,
+        `🌐 Page: ${window.location.pathname}`,
+        `📍 Location: ${info.city || "Unknown"}, ${info.country_name || "Unknown"}`,
+        `🌐 IP: ${info.ip || "Unknown"}`,
+        `💻 Device: ${device.device} · ${device.os}`,
+        `🌍 Browser: ${device.browser}`,
+        `🔗 Referrer: ${document.referrer || "Direct"}`,
+        `🕒 Time: ${new Date().toLocaleString("en-GB", {
+          timeZone: "Asia/Phnom_Penh",
+        })}`,
         "",
-        "📍 LOCATION",
-        `City: ${info.city || "Unknown"}`,
-        `Region: ${info.region || "Unknown"}`,
-        `Country: ${info.country_name || "Unknown"}`,
-        `IP: ${info.ip}`,
-        `Timezone: ${info.timezone || "Unknown"}`,
-        "",
-        "💻 CLIENT DEVICE",
-        `Device: ${device.device}`,
-        `OS: ${device.os}`,
-        `Browser: ${device.browser}`,
-        `Screen: ${device.screen}`,
-        `Language: ${device.language}`,
-        `Platform: ${device.platform}`,
-        "",
-        `🕒 Time: ${new Date().toLocaleString()}`,
-        "",
-        "#visitor #portfolio",
+        "#PortfolioVisitor",
       ].join("\n");
 
       const sent = await telegramService.sendMessage({
