@@ -36,20 +36,34 @@ export const visitorNotificationService = {
 
       const info = await visitorService.getInfo();
 
-      if (!info.ip) return;
+      if (!info.ip || IGNORE_IPS.includes(info.ip)) return;
 
-      if (IGNORE_IPS.includes(info.ip)) return;
+      const device = visitorService.getDeviceInfo();
 
       const message = [
-        "🔔 New visitor on portfolio site",
+        "🔔 NEW PORTFOLIO VISITOR",
+        "━━━━━━━━━━━━━━━━━━",
         "",
+        "🌐 VISIT",
         `URL: ${window.location.href}`,
-        `Location: ${info.city || "?"}, ${info.region || "?"}, ${info.country_name || "?"}`,
-        `IP: ${info.ip}`,
-        `ISP: ${info.org || "?"}`,
-        `Timezone: ${info.timezone || "?"}`,
         `Referrer: ${document.referrer || "Direct"}`,
-        `Time: ${new Date().toLocaleString()}`,
+        "",
+        "📍 LOCATION",
+        `City: ${info.city || "Unknown"}`,
+        `Region: ${info.region || "Unknown"}`,
+        `Country: ${info.country_name || "Unknown"}`,
+        `IP: ${info.ip}`,
+        `Timezone: ${info.timezone || "Unknown"}`,
+        "",
+        "💻 CLIENT DEVICE",
+        `Device: ${device.device}`,
+        `OS: ${device.os}`,
+        `Browser: ${device.browser}`,
+        `Screen: ${device.screen}`,
+        `Language: ${device.language}`,
+        `Platform: ${device.platform}`,
+        "",
+        `🕒 Time: ${new Date().toLocaleString()}`,
         "",
         "#visitor #portfolio",
       ].join("\n");

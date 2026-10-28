@@ -10,14 +10,14 @@ interface TelegramResponse {
   description?: string;
 }
 
-export interface TelegramMessage {
+interface TelegramMessage {
   text: string;
 }
 
 export const telegramService = {
   async sendMessage({ text }: TelegramMessage): Promise<boolean> {
     if (!BOT_TOKEN || !CHAT_ID) {
-      console.error("Telegram bot configuration is missing.");
+      console.error("Telegram configuration is missing.");
       return false;
     }
 
@@ -29,9 +29,7 @@ export const telegramService = {
           text,
           disable_web_page_preview: true,
         },
-        {
-          timeout: 10000,
-        },
+        { timeout: 10000 },
       );
 
       return data.ok === true;
