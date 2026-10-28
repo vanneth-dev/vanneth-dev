@@ -5,19 +5,19 @@ import "./shared/utils/i18n";
 import RouterApp from "./router";
 import { initGtag } from "src/shared/utils/gtag";
 import { initHotjar } from "src/shared/utils/hotjar";
+import { visitorNotificationService } from "src/shared/services/visitor-notification.service";
 
 function App() {
   useEffect(() => {
     if (import.meta.env.VITE_NODE_ENV === "production") {
       initGtag();
       initHotjar();
+
+      void visitorNotificationService.notify();
     }
   }, []);
-  return (
-    <>
-      <RouterApp />
-    </>
-  );
+
+  return <RouterApp />;
 }
 
 export default App;
